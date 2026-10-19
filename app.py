@@ -4,7 +4,6 @@ from dotenv import load_dotenv
 from google import genai
 
 # Load API key from .env
-
 load_dotenv()
 
 API_KEY = os.getenv("GEMINI_API_KEY")
@@ -12,16 +11,13 @@ API_KEY = os.getenv("GEMINI_API_KEY")
 app = Flask(__name__)
 
 # Connect to Gemini
-
 client = genai.Client(api_key=API_KEY) if API_KEY else None
 
 HTML = """
-
 <!DOCTYPE html>
-
 <html>
 <head>
-    <title>Gemini AI Chatbot</title>
+    <title>Ask Gemini 2.0</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -55,22 +51,20 @@ HTML = """
     </style>
 </head>
 <body>
-    <h1>Gemini AI Chatbot</h1>
+    <h1>Ask Gemini 2.0</h1>
 
-<form method="POST">
-    <input type="text" name="question"
-           placeholder="Ask me anything..." required>
-    <button type="submit">Ask AI</button>
-</form>
+    <form method="POST">
+        <input type="text" name="question"
+               placeholder="Ask Gemini anything..." required>
+        <button type="submit">Ask Gemini</button>
+    </form>
 
-{% if answer %}
-    <div class="answer">
-        <strong>Response:</strong>
-        <p>{{ answer }}</p>
-    </div>
-{% endif %}
-
-
+    {% if answer %}
+        <div class="answer">
+            <strong>Response:</strong>
+            <p>{{ answer }}</p>
+        </div>
+    {% endif %}
 </body>
 </html>
 """
@@ -98,4 +92,5 @@ def home():
 
 
 if __name__ == "__main__":
- app.run(debug=True)
+    app.run(debug=True)
+
