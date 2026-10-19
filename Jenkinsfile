@@ -1,7 +1,6 @@
 pipeline {
 agent any
 
-```
 environment {
     AWS_REGION = 'ap-south-1'
     AWS_ACCOUNT_ID = '657231015453'
@@ -85,6 +84,5 @@ post {
         echo 'Pipeline failed. Check Console Output for the failing stage.'
     }
 }
-```
 
 }
