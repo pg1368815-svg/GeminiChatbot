@@ -17,7 +17,7 @@ HTML = """
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Ask Gemini 2.0</title>
+    <title>Ask Gemini 1.0</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -51,7 +51,7 @@ HTML = """
     </style>
 </head>
 <body>
-    <h1>Ask Gemini 2.0</h1>
+    <h1>Ask Gemini 1.0</h1>
 
     <form method="POST">
         <input type="text" name="question"
